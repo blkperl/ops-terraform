@@ -9,3 +9,6 @@ resource "aws_instance" "puppet" {
     }
 }
 
+resource "aws_eip" "ip" {
+    instance = "${aws_instance.puppet.id}"
+}
